@@ -7,7 +7,6 @@ import {
   USER_SIGNUP_REQUEST,
   USER_SIGNUP_SUCCESS,
 } from "../constants/userConstant";
-const BASE_URL = "http://localhost:5000";
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -18,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      `${BASE_URL}/api/users/login`,
+      `/api/users/login`,
       { email, password },
       config
     );
@@ -69,7 +68,7 @@ export const signup =
         },
       };
       const { data } = await axios.post(
-        `${BASE_URL}/api/users/register`,
+        `/api/users/register`,
         {
           firstname,
           lastname,
