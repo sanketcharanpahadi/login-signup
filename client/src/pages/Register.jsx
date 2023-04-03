@@ -10,6 +10,7 @@ import {
 } from "../constants/userConstant";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Alert from "../components/Alert";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,8 @@ const Register = () => {
     dispatch({ type: USER_TOGGLE_ISMEMBER });
   };
   return (
-    <div className="flex items-center justify-center w-full min-h-screen bg-slate-200">
+    <div className="flex flex-col items-center justify-center w-full min-h-screen bg-slate-200">
+      <Alert />
       <form
         className="flex flex-col gap-4 px-6 py-8 bg-white rounded w-80"
         onSubmit={submitHandler}

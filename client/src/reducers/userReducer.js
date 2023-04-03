@@ -6,6 +6,7 @@ import {
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
+  USER_LOGOUT,
   USER_SIGNUP_FAIL,
   USER_SIGNUP_REQUEST,
   USER_SIGNUP_SUCCESS,
@@ -89,6 +90,9 @@ export const userReducer = (state = initialState, action) => {
 
     case USER_TOGGLE_ISMEMBER:
       return { ...state, isMember: !state.isMember };
+
+    case USER_LOGOUT:
+      return { ...initialState };
 
     default:
       return state;

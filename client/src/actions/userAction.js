@@ -78,6 +78,7 @@ export const signup =
         },
         config
       );
+
       if (!data) {
         dispatch({
           type: USER_SIGNUP_FAIL,
@@ -108,7 +109,7 @@ export const signup =
       dispatch({
         type: USER_SIGNUP_FAIL,
         payload: {
-          alertText: error.message,
+          alertText: error.response.data.message,
           alertType: "danger",
         },
       });
